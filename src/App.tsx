@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Todo from './Todo';
+import TodoList from './TodoList';
+
+/* 
+Normally this data would come from a database. It would either be fetched on the client-side during hydration or on the server-side for statically generated pages (as in Next.js)
+
+But for the purposes of this demo, let us manually create the Todo components and pass them to TodoList as children.
+ */
+
+const todo_data = [
+  { title: 'Leather jacket', done: false },
+  { title: 'The Feynman Lectures hardcover', done: true },
+  { title: 'Seiko timepiece', done: true }
+];
+
+const todo_components = todo_data.map(t => <Todo key={t.title} {...t} />);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoList title="Shopping List">
+      { todo_components}
+    </TodoList>
   );
 }
 
