@@ -1,11 +1,3 @@
 .Todo {
     display: flex;
 }
-
-.title {
-    font-size: 1.5rem;
-}
-
-.done {
-    min-width: 3ch;
-}
