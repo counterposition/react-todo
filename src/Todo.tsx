@@ -12,10 +12,6 @@ interface TodoProps {
 const Todo: React.FC<TodoProps> = ({ title, done }) => {
     const [_done, setDone] = useState(done);
 
-    function handleDoneToggle(e: React.ChangeEvent<HTMLInputElement>) {
-        setDone(e.target.checked);
-    }
-
     return (
         <div className={styles.Todo}>
             <input
@@ -23,7 +19,7 @@ const Todo: React.FC<TodoProps> = ({ title, done }) => {
                 name=""
                 id={"item-done_" + IDSafe(title)}
                 checked={_done}
-                onChange={handleDoneToggle}
+                onChange={ e => setDone(e.target.checked) }
             />
 
             <div>{title}</div>
