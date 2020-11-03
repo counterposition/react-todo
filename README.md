@@ -1,3 +1,7 @@
+## Overview
+
+A simple todo list. This demo will evolve unpredictably as I try to incorporate more cool things like GraphQL and inline editable labels (à la Trello).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
